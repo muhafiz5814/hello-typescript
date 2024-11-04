@@ -53,7 +53,7 @@ arr.forEach(str => str.length);
 
 /* -------------------------------------------------------------------------------- */
 
-// 2. - type: 'Tuple' * * * * * * * * * *
+// 3. - type: 'Tuple' * * * * * * * * * *
 
 // A tuple is a fixed length array, where each element has a specific type.
 
@@ -63,7 +63,7 @@ let user: [number, string] = [1, "raza"];
 
 /* -------------------------------------------------------------------------------- */
 
-// 2. - type: 'Enum' * * * * * * * * * *
+// 4. - type: 'Enum' * * * * * * * * * *
 
 // Enum is a list of related constants.
 
@@ -76,4 +76,22 @@ let user: [number, string] = [1, "raza"];
 enum Size { Small = 1, Medium, Large };
 // const enum Size { Small = 1, Medium, Large };  /* It will create less complicated javascript code. */
 let mySize: Size = Size.Large;
-console.log(mySize);
+// console.log(mySize);
+
+
+/* -------------------------------------------------------------------------------- */
+
+// 5. - type: 'Function' * * * * * * * * * *
+
+// Some best practices are:
+// to always declare return type in function.
+// to enable noImplicitReturns.
+// to enable noUnusedLocals.
+// to enable noUnusedParameters.
+
+function calculateAge(birthYear = 2000): number {
+  return new Date().getFullYear() - birthYear;
+}
+
+console.log(calculateAge());
+console.log(calculateAge(1997));

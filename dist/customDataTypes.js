@@ -27,4 +27,9 @@ var Size;
 ;
 let mySize = Size.Large;
 console.log(mySize);
+function calculateAge(birthYear = 2000) {
+    return new Date().getFullYear() - birthYear;
+}
+console.log(calculateAge());
+console.log(calculateAge(1997));
 //# sourceMappingURL=customDataTypes.js.map
