@@ -26,10 +26,13 @@ var Size;
 })(Size || (Size = {}));
 ;
 let mySize = Size.Large;
-console.log(mySize);
 function calculateAge(birthYear = 2000) {
     return new Date().getFullYear() - birthYear;
 }
-console.log(calculateAge());
-console.log(calculateAge(1997));
+let employee = {
+    id: 1,
+    name: "Raza",
+    retire: (date) => date.toDateString()
+};
+console.log(`id: ${employee.id}, name: ${employee.name}, retire: ${employee.retire(new Date())}`);
 //# sourceMappingURL=customDataTypes.js.map

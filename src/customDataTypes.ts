@@ -93,5 +93,22 @@ function calculateAge(birthYear = 2000): number {
   return new Date().getFullYear() - birthYear;
 }
 
-console.log(calculateAge());
-console.log(calculateAge(1997));
+// console.log(calculateAge());
+// console.log(calculateAge(1997));
+
+
+/* -------------------------------------------------------------------------------- */
+
+// 6. - type: 'Objects' * * * * * * * * * *
+
+let employee: {
+  id: number,
+  name: string, //  We can also make it optional using '?' at the end of the 'name'.
+  retire: (date: Date) => string
+} = {
+  id: 1,
+  name: "Raza",
+  retire: (date: Date) => date.toDateString() 
+};
+
+console.log(`id: ${employee.id}, name: ${employee.name}, retire: ${employee.retire(new Date())}`);
