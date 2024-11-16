@@ -1,5 +1,6 @@
 "use strict";
 var _a, _b;
+Object.defineProperty(exports, "__esModule", { value: true });
 let user1 = {
     _id: "1234",
     name: "raza",
