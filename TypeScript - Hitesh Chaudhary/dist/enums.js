@@ -1,3 +1,4 @@
+"use strict";
 var seatChoice;
 (function (seatChoice) {
     seatChoice["AISLE"] = "aisle";
@@ -6,7 +7,7 @@ var seatChoice;
     seatChoice[seatChoice["FOURTH"] = 3] = "FOURTH";
 })(seatChoice || (seatChoice = {}));
 ;
-var razaSeat = seatChoice.WINDOW;
+let razaSeat = seatChoice.WINDOW;
 console.log(razaSeat);
 razaSeat = seatChoice.AISLE;
 console.log(razaSeat);

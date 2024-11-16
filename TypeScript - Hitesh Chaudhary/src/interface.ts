@@ -65,3 +65,6 @@ let fortuner: Toyota = {
   brandName: "toyota",
   originCountry: "germany"
 }
+
+
+export { };
