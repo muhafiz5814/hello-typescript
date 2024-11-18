@@ -36,3 +36,19 @@ const laptop1 = {
 };
 identityThree(laptop1); //  This is the correct syntax for calling a generic function for custom type.
 identityThree({ brand: "hp", model: "notebook", price: 42000 }); /* X X */ //  This is not the correct syntax in case of custom types.
+// Arrays in generics * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+function getLaptops(arg) {
+    return arg[0];
+}
+function getLaptops1(arg) {
+    return arg[1];
+}
+// Arrow functions in generics * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+let getManyLaptops = (arg) => {
+    return arg[1];
+};
+// A comma (,) after "T" is just a syntactical sugar and will not cause any error or warning.
+// It is good to use this syntax while working with React to differantiate between generic type and JSX HTML Element.
+let getManyMoreLaptops = (arg) => {
+    return arg;
+};
