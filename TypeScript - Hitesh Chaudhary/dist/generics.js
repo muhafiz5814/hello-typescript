@@ -52,3 +52,37 @@ let getManyLaptops = (arg) => {
 let getManyMoreLaptops = (arg) => {
     return arg;
 };
+// We can use as many input types as we want.
+let multipleTypeGenericFunction = (valOne, valTwo) => {
+    return {
+        valOne,
+        valTwo
+    };
+};
+let constrainBasedGeneric = (arg1, arg2) => {
+    return arg2;
+};
+constrainBasedGeneric({ prop1: "hi", prop2: "bye" }, "hello");
+function constrainBasedGeneric2(arg1, arg2) {
+    return arg1[arg2];
+}
+// some random object
+let obj = {
+    p1: "hey",
+    num: 4,
+    p2: true
+};
+constrainBasedGeneric2(obj, "p1");
+constrainBasedGeneric2(obj, "num");
+constrainBasedGeneric2(obj, "p2");
+class Sellable {
+    constructor() {
+        this.cart = [];
+        this.addToCart = (product) => {
+            this.cart.push(product);
+        };
+    }
+    deleteFromCart() {
+        return this.cart.length > 0 ? this.cart.pop() : undefined;
+    }
+}

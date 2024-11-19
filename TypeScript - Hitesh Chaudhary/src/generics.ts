@@ -76,3 +76,65 @@ let getManyLaptops = <T>(arg: T[]): T => {
 let getManyMoreLaptops = <T,>(arg: T): T => {
   return arg;
 }
+
+// We can use as many input types as we want.
+let multipleTypeGenericFunction = <T, U>(valOne: T, valTwo: U): {} => {
+  return {
+    valOne,
+    valTwo
+  };
+};
+
+
+// Constrains in generic types
+interface Random {
+  prop1: string,
+  prop2: string
+}
+
+let constrainBasedGeneric = <Type, Input extends Random>(arg1: Input, arg2: Type): Type => {
+  return arg2;
+}
+
+constrainBasedGeneric({prop1: "hi", prop2: "bye"}, "hello");
+
+function constrainBasedGeneric2<Input, Key extends keyof Input>(arg1: Input, arg2: Key): Input[Key] {
+  return arg1[arg2];
+}
+
+// some random object
+let obj = {
+  p1: "hey",
+  num: 4,
+  p2: true
+};
+
+constrainBasedGeneric2(obj, "p1");
+constrainBasedGeneric2(obj, "num");
+constrainBasedGeneric2(obj, "p2");
+// constrainBaseGeneric2(obj, 4); //  Not allowed, second argument must be a property or key of the object provided in first argument.
+// constrainBaseGeneric2(obj, "4"); //  Not allowed
+
+// Generic classes * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+interface Book {
+  title: string,
+  type: string
+}
+
+interface Course {
+  name: string,
+  price: string
+}
+
+class Sellable<T> {
+  cart: T[] = [];
+
+  addToCart = (product: T): void => {
+    this.cart.push(product);
+  };
+
+  deleteFromCart(): T | undefined{
+    return this.cart.length > 0 ? this.cart.pop() : undefined;
+  }
+}
